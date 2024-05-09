@@ -1,4 +1,4 @@
-# cli-ai-note-exporter
+# CLAI-note
 A CLI program written in Python that creates and exports LLM-enhanced notes.
 
 The program will be written in Python, mainly using functionality
@@ -11,7 +11,7 @@ person - me. It will face trial by fire in my third semester.
 
 The core functionality is to allow users to create a note via a CLI command,
 with options specifying the following:
-  - Formatting for the note (will have a default markdown style - LaTeX?)
+  - Formatting for the note (will have a default markdown style)
   - Where and how to export the note (Anki, Obsidian, etc.)
   - Tags to be associated with the note - sort by tag functionality?
   - Whether or not to enhance the note with an LLM, with its own options:
