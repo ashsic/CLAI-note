@@ -2,7 +2,7 @@
 A CLI program written in Python that creates and exports LLM-enhanced notes.
 
 The program will be written in Python, mainly using functionality
-provided by Typer, as well as Fire, PyTorch, and other dependencies (TBD).
+provided by Typer, and other dependencies (TBD).
 
 The main goal of the project is to create something useful for at least one
 person - me. It will face trial by fire in my third semester.
