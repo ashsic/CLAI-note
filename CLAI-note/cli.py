@@ -1,4 +1,3 @@
-"""This module provides the CLI for the note taking app."""
 # cliNote/cli.py
 
 from typing import Optional
