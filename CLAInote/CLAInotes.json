@@ -1,11 +1,22 @@
 [
     {
         "title": "PCI DSS",
-        "short": "Payment Card Industry Data Security Standard (PCI DSS) is a set of security protocols designed to ensure that companies handling credit card information maintain a secure environment. It provides guidelines for protecting sensitive data and preventing fraud.",
-        "long": "The Payment Card Industry Data Security Standard (PCI DSS) is a comprehensive set of security controls designed to protect cardholder data. It applies to any organization that handles, processes, or stores credit card information. The standard consists of 12 requirements, which include installing and maintaining a firewall, encrypting cardholder data, and implementing strong access control measures. Compliance with PCI DSS is mandatory for organizations handling credit card data, and involves regular security audits and risk assessments. By following PCI DSS guidelines, companies can significantly reduce the risk of credit card fraud and protect sensitive customer data.",
+        "short": "PCI DSS (Payment Card Industry Data Security Standard) is a set of security protocols for organizations that handle credit card information, ensuring secure transactions and protection of sensitive data.",
+        "long": "The Payment Card Industry Data Security Standard (PCI DSS) is a global standard for ensuring the security of credit card information and preventing fraud. It was established by major credit card brands, including Visa, Mastercard, and American Express, to protect cardholder data. The standard outlines 12 requirements, covering areas such as network security, access control, encryption, and monitoring. Compliance with PCI DSS is mandatory for organizations that store, process, or transmit credit card information, including merchants, processors, and financial institutions. By adhering to PCI DSS, organizations can reduce the risk of data breaches and protect sensitive information.",
         "tags": [
             "cybersecurity",
             "data"
+        ]
+    },
+    {
+        "title": "Domain Name System (DNS)",
+        "short": "The Domain Name System (DNS) is a crucial internet infrastructure that translates human-readable domain names into machine-readable IP addresses, enabling devices to communicate with each other. It's a hierarchical decentralized system, allowing for efficient domain name resolution and routing.",
+        "long": "The Domain Name System (DNS) is a fundamental component of the internet, facilitating communication between devices by resolving human-readable domain names into machine-readable IP addresses. This hierarchical decentralized system consists of a root domain, top-level domains, and lower-level domains, each managed by a domain name registrar. DNS uses a client-server architecture, where DNS resolvers (clients) query DNS servers for IP address resolutions. The system utilizes caching and recursive queries to optimize performance and reduce latency. DNS also supports various record types, such as A, NS, and MX, to provide additional functionality like mail server routing. Understanding DNS is essential for network administration, system design, and cybersecurity, as it plays a critical role in internet infrastructure.",
+        "tags": [
+            "networking",
+            "system design",
+            "cybersecurity",
+            "web development"
         ]
     }
 ]

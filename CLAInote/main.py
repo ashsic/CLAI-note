@@ -72,6 +72,7 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
     # print(data['short'])
     # print(chat_completion.usage.prompt_tokens, chat_completion.usage.completion_tokens)
     # print(get_file_path())
+    print("done")
 
 if __name__ == "__main__":
     typer.run(main)
