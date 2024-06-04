@@ -8,7 +8,7 @@ import os
 import typer
 from openai import OpenAI
 
-
+from jsonstore import *
 
 def main(name: Annotated[Optional[str], typer.Argument()]=None):
     """
@@ -62,21 +62,16 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
         ],
     )
 
-    # data = {
-    #     "title": "",
-    #     "short": "",
-    #     "long": "",
-    #     "tags": []
-    # }
-
     data = json.loads(chat_completion.choices[0].message.content)
 
-    print(data['title'])
-    print(data['tags'])
-    print(data['short'])
+    current_path = get_file_path()
+    append_to_json_file(current_path, data)
 
-    print(chat_completion.usage.prompt_tokens, chat_completion.usage.completion_tokens)
-
+    # print(data['title'])
+    # print(data['tags'])
+    # print(data['short'])
+    # print(chat_completion.usage.prompt_tokens, chat_completion.usage.completion_tokens)
+    # print(get_file_path())
 
 if __name__ == "__main__":
     typer.run(main)
