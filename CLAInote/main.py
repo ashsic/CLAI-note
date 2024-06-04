@@ -1,10 +1,13 @@
 from typing import Optional
 from typing_extensions import Annotated
 
+import json
+
 import os
 
 import typer
 from openai import OpenAI
+
 
 
 def main(name: Annotated[Optional[str], typer.Argument()]=None):
@@ -19,14 +22,15 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
         "cybersecurity",
         "data",
         "system design",
-        "deep learning"
+        "deep learning",
+        "web development",
     ]
 
     prompt = "prompt: " + name + "tags: " + str(tags)
 
     openai = OpenAI(
-        api_key=os.getenv("API_KEY"),
-        base_url=os.getenv("BASE_URL"),
+        api_key=os.getenv("CLAINOTE_API_KEY"),
+        base_url=os.getenv("CLAINOTE_BASE_URL"),
     )
 
     chat_completion = openai.chat.completions.create(
@@ -37,14 +41,15 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
                 "content": 
                     """
                     Please respond to the following prompt with only a JSON 
-                    object that contains 4 fields: title, short, long, and tags.
+                    object (no newlines) that contains 4 fields: title, short, long, and tags.
 
                     title should only be the topic discussed in the content.
 
                     short should be a rewritten form of the prompt with
                     any missing info added, and should be less than 100 words.
 
-                    long should be a detailed technical summary of the topic
+                    long should be a detailed technical summary of the topic,
+                    emphasizing any features 
                     and may be up to 300 words.
 
                     tags should be chosen from the list provided based on 
@@ -57,7 +62,19 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
         ],
     )
 
-    print(chat_completion.choices[0].message.content)
+    # data = {
+    #     "title": "",
+    #     "short": "",
+    #     "long": "",
+    #     "tags": []
+    # }
+
+    data = json.loads(chat_completion.choices[0].message.content)
+
+    print(data['title'])
+    print(data['tags'])
+    print(data['short'])
+
     print(chat_completion.usage.prompt_tokens, chat_completion.usage.completion_tokens)
 
 
