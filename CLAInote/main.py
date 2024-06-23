@@ -28,6 +28,25 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
 
     prompt = "prompt: " + name + "tags: " + str(tags)
 
+    system_prompt = """
+        Please respond to the following prompt with only a JSON 
+        object (no newlines) that contains 4 fields: title, short, long, and tags.
+
+        title should only be the topic discussed in the content.
+
+        short should be a rewritten form of the prompt with
+        any missing info added, and should be less than 100 words.
+
+        long should be a detailed technical summary of the topic,
+        emphasizing any features 
+        and may be up to 300 words.
+
+        tags should be chosen from the list provided based on 
+        relevance to the title and content.
+
+        Thank you!
+        """
+
     openai = OpenAI(
         api_key=os.getenv("CLAINOTE_API_KEY"),
         base_url=os.getenv("CLAINOTE_BASE_URL"),
@@ -38,27 +57,12 @@ def main(name: Annotated[Optional[str], typer.Argument()]=None):
         messages=[
             {
                 "role": "system", 
-                "content": 
-                    """
-                    Please respond to the following prompt with only a JSON 
-                    object (no newlines) that contains 4 fields: title, short, long, and tags.
-
-                    title should only be the topic discussed in the content.
-
-                    short should be a rewritten form of the prompt with
-                    any missing info added, and should be less than 100 words.
-
-                    long should be a detailed technical summary of the topic,
-                    emphasizing any features 
-                    and may be up to 300 words.
-
-                    tags should be chosen from the list provided based on 
-                    relevance to the title and content.
-
-                    Thank you!
-                    """
+                "content": system_prompt
             },
-            {"role": "user", "content": prompt}
+            {
+                "role": "user", 
+                "content": prompt
+            }
         ],
     )
 
