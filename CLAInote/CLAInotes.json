@@ -18,5 +18,23 @@
             "cybersecurity",
             "web development"
         ]
+    },
+    {
+        "title": "Network Address Translation",
+        "short": "Network Address Translation (NAT) is a technique used to allow multiple devices on a private network to share a single public IP address when accessing the internet or other external networks.",
+        "long": "Network Address Translation is a crucial concept in computer networking that enables multiple devices on a private network to share a single public IP address when accessing the internet or other external networks. This is achieved by modifying the source IP address of outgoing traffic and the destination IP address of incoming traffic. NAT routers maintain a translation table to keep track of these changes, ensuring that responses to outgoing requests are correctly routed back to the originating device. There are different types of NAT, including static NAT, dynamic NAT, and Port Address Translation (PAT). NAT is commonly used in home networks, where a single public IP address is provided by an Internet Service Provider (ISP), as well as in enterprise environments to conserve public IP addresses and improve network security.",
+        "tags": [
+            "networking",
+            "system design",
+            "cybersecurity"
+        ]
+    },
+    {
+        "title": "Ransomware",
+        "short": "Ransomware is a type of malicious software that encrypts a victim's files or locks their device and demands a ransom in exchange for the decryption key or unlock code. This type of cyberattack has become increasingly common, with hackers targeting individuals, businesses, and organizations.",
+        "long": "Ransomware is a subtype of malware that utilizes advanced encryption algorithms to restrict access to a victim's digital assets. It can spread through various means, including phishing emails, infected software downloads, and exploited vulnerabilities in networks and systems. Once infected, the ransomware encrypts files, making them inaccessible, and displays a ransom note demanding payment in exchange for the decryption key. Ransomware attacks can have devastating consequences, including data loss, financial losses, and disruption of critical operations. To mitigate these risks, it is essential to implement robust cybersecurity measures, such as regular backups, network segmentation, and employee education.",
+        "tags": [
+            "cybersecurity"
+        ]
     }
 ]
